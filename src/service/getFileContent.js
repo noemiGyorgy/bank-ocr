@@ -1,5 +1,3 @@
-import parseToAccountNumbers from "./parseToAccountNumbers";
-
 const getFileContent = async (e, setText) => {
   e.preventDefault();
   const reader = new FileReader();
