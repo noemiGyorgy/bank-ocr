@@ -19,10 +19,13 @@ const getNumber = (firstLine, secondLine, thirdLine) => {
 const parseToAccountNumbers = (text) => {
   const ENTRY_HEIGHT = 4;
   let lines = text.split("\n");
+  let numbers = [];
 
   for (let i = 0; i < lines.length; i += ENTRY_HEIGHT) {
-    console.log(getNumber(lines[i], lines[i + 1], lines[i + 2]));
+    numbers.push(getNumber(lines[i], lines[i + 1], lines[i + 2]));
   }
+
+  return numbers;
 };
 
 export default parseToAccountNumbers;
