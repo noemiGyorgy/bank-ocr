@@ -5,8 +5,6 @@ const isValidChecksum = (accountNumber) => {
     sum += i * parseInt(accountNumber.charAt(length - i));
   }
 
-  console.log(sum % 11);
-
   if (sum % 11 === 0) {
     return true;
   }

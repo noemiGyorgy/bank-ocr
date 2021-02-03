@@ -25,7 +25,6 @@ const getNumber = (firstLine, secondLine, thirdLine) => {
   } else if (!isValidChecksum(accountNumber)) {
     status = "ERR";
   }
-  console.log(status + accountNumber);
 
   return { account: accountNumber, status: status };
 };
@@ -33,13 +32,13 @@ const getNumber = (firstLine, secondLine, thirdLine) => {
 const parseToAccountNumbers = (text) => {
   const ENTRY_HEIGHT = 4;
   let lines = text.split("\n");
-  let numbers = [];
+  let accounts = [];
 
   for (let i = 0; i < lines.length; i += ENTRY_HEIGHT) {
-    numbers.push(getNumber(lines[i], lines[i + 1], lines[i + 2]));
+    accounts.push(getNumber(lines[i], lines[i + 1], lines[i + 2]));
   }
 
-  return numbers;
+  return accounts;
 };
 
 export default parseToAccountNumbers;
