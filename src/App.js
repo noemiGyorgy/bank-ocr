@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import MainPage from "./pages/MainPage";
+import ResultPage from "./pages/ResultPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <main>
         <Router>
           <Route exact path="/" component={MainPage} />
+          <Route path="/file/:fileName" component={ResultPage} />
         </Router>
       </main>
       <footer>

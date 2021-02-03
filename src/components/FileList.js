@@ -1,15 +1,18 @@
 import React, { useContext } from "react";
 import { AccountNumbersContext } from "../context/AccountNumbersContext";
+import { Link } from "react-router-dom";
 
 function FileList() {
   const [accountNumbers, setAccountNumbers] = useContext(AccountNumbersContext);
 
   let content = <div />;
 
-  if (accountNumbers.length !== 0) {
-    content = accountNumbers.map((a, index) => (
+  if (Object.keys(accountNumbers).length !== 0) {
+    content = Object.keys(accountNumbers).map((file, index) => (
       <div className="file-item" key={index}>
-        {a.fileName}
+        <Link to={`file/${file}`} key={index} className="file-link">
+          {file}
+        </Link>
       </div>
     ));
   }

@@ -10,26 +10,25 @@ function MainPage() {
   const [text, setText] = useState("");
 
   const handleChange = (e) => {
-    setFileName(e.target.files[0].name);
+    let name = e.target.files[0].name;
+    let dot = name.lastIndexOf(".");
+    setFileName(name.substring(0, dot));
     getFileContent(e, setText);
   };
 
   useEffect(() => {
     if (fileName !== "") {
-      let newAccountNumbers = [...accountNumbers];
-      newAccountNumbers.push({
-        fileName: fileName,
-        accounts: parseToAccountNumbers(text),
-      });
+      let newAccountNumbers = { ...accountNumbers };
+      newAccountNumbers[fileName] = parseToAccountNumbers(text);
       setAccountNumbers(newAccountNumbers);
     }
-  }, [fileName]);
+  }, [text]);
 
   return (
     <div id="upload-area">
       <div id="inner-area">
         <p>Upload your files here</p>
-        <label for="upload-button" class="file-upload">
+        <label htmlFor="upload-button" className="file-upload">
           {" "}
           CHOOSE A FILE
         </label>
