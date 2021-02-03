@@ -51,3 +51,43 @@ a {
   color: #0070f3;
   text-decoration: none;
 }
+
+#upload-area {
+  background-color: #4577a2;
+  color: white;
+  width: 100%;
+  padding: 10px;
+}
+
+#inner-area {
+  border: 2px dashed white;
+  padding: 50px;
+  font-size: small;
+}
+
+#file-list {
+  margin: 20px;
+  padding: 10px;
+  font-size: medium;
+}
+
+.file-item {
+  padding: 10px;
+}
+
+input[type="file"] {
+  display: none;
+}
+.file-upload {
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 20px 60px;
+  cursor: pointer;
+}
+
+.file-upload:hover {
+  color: black;
+}

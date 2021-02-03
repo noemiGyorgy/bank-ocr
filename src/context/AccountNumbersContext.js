@@ -6,9 +6,7 @@ export const AccountNumbersProvider = (props) => {
   const [accountNumbers, setAccountNumbers] = useState([]);
 
   return (
-    <AccountNumbersContext.Provider
-      value={{ accountNumbers, setAccountNumbers }}
-    >
+    <AccountNumbersContext.Provider value={[accountNumbers, setAccountNumbers]}>
       {props.children}
     </AccountNumbersContext.Provider>
   );
