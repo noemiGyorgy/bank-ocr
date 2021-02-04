@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import ResultPage from "./pages/ResultPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <div className="container">
+      <Router>
+        <header>
+          <h1>
+            <Link to="/">Bank OCR</Link>
+          </h1>
+        </header>
+
+        <main>
+          <Route exact path="/" component={MainPage} />
+          <Route path="/file/:fileName" component={ResultPage} />
+        </main>
+      </Router>
+
+      <footer>
+        <a href="https://github.com/noemiGyorgy/bank-ocr" target="_blank">
+          Check out the code on Github
         </a>
-      </header>
+      </footer>
     </div>
   );
 }
