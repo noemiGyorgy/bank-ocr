@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AccountNumbersContext } from "../context/AccountNumbersContext";
 
 function ResultPage() {
@@ -39,7 +39,15 @@ function ResultPage() {
     );
   }
 
-  return <React.Fragment>{content}</React.Fragment>;
+  return (
+    <React.Fragment>
+      {content}
+      <Link to="/" className="back">
+        {" "}
+        {"<"} Back to the Home page
+      </Link>
+    </React.Fragment>
+  );
 }
 
 export default ResultPage;

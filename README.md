@@ -1,4 +1,12 @@
-Expected behavior for testData1.txt:
+# Bank OCR
+
+On the home page we can upload multiple files separately. You can download the test files from the <b>test</b> directory.
+
+Automatically they are parsed, analyzed and they are saved in the global state.
+
+Clicking on the name of the file opens the result page.
+
+On the result page we can see the working functionalities. For example here is the expected behavior for testData1.txt:
 
 ```txt
  _  _  _  _  _  _  _  _
@@ -30,3 +38,5 @@ too much variant ('ADCDEF777', 'ABCDFF777') -> AMB
   || ||_/|_ |_/|_      |
 can not fixed with only 1 change -> ILL
 ```
+
+We can navigate back to the home page by clicking on "Bank OCR" or "Back to the Home page".
