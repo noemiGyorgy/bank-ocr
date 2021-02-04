@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import getFileContent from "../service/getFileContent";
-import parseToAccountNumbers from "../service/parseToAccountNumbers";
+import getFileContent from "../service/GetFileContent";
+import parseToAccountNumbers from "../service/ParseToAccountNumbers";
 import { AccountNumbersContext } from "../context/AccountNumbersContext";
 import FileList from "../components/FileList";
 

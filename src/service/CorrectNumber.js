@@ -1,6 +1,6 @@
-import isValidChecksum from "./isValidChecksum";
-import replaceAt from "./replaceAt";
-import digitalNumbers from "./digitalNumbers";
+import isValidChecksum from "./IsValidChecksum";
+import replaceAt from "./ReplaceAt";
+import digitalNumbers from "./DigitalNumbers";
 
 /*
 Changes can be found in these positions:
