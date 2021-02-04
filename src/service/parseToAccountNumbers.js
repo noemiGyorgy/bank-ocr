@@ -1,5 +1,6 @@
 import digitalNumbers from "./digitalNumbers";
 import isValidChecksum from "./isValidChecksum";
+import correctNumber from "./correctNumber";
 
 const getNumber = (firstLine, secondLine, thirdLine) => {
   const DIGIT_WIDTH = 3;
@@ -26,7 +27,11 @@ const getNumber = (firstLine, secondLine, thirdLine) => {
     status = "ERR";
   }
 
-  return { account: accountNumber, status: status };
+  if (status === "OK") {
+    return { account: accountNumber, status: status };
+  }
+
+  return correctNumber(accountNumber);
 };
 
 const parseToAccountNumbers = (text) => {
