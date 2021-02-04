@@ -1,17 +1,22 @@
 import digitalNumbers from "./digitalNumbers";
 import isValidChecksum from "./isValidChecksum";
+import correctNumber from "./correctNumber";
 
 const getNumber = (firstLine, secondLine, thirdLine) => {
   const DIGIT_WIDTH = 3;
   let accountNumber = "";
   let status = "OK";
   let isIllegible = false;
+  let strDigitals = [];
 
   for (let i = 0; i < firstLine.length; i += DIGIT_WIDTH) {
     let digitalNumber =
       firstLine.slice(i, i + DIGIT_WIDTH) +
       secondLine.slice(i, i + DIGIT_WIDTH) +
       thirdLine.slice(i, i + DIGIT_WIDTH);
+
+    strDigitals.push(digitalNumber);
+
     if (digitalNumber in digitalNumbers) {
       accountNumber += digitalNumbers[digitalNumber];
     } else {
@@ -26,7 +31,11 @@ const getNumber = (firstLine, secondLine, thirdLine) => {
     status = "ERR";
   }
 
-  return { account: accountNumber, status: status };
+  if (status === "OK") {
+    return { account: accountNumber, status: status };
+  }
+
+  return correctNumber(accountNumber, strDigitals);
 };
 
 const parseToAccountNumbers = (text) => {
