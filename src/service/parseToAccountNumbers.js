@@ -7,12 +7,16 @@ const getNumber = (firstLine, secondLine, thirdLine) => {
   let accountNumber = "";
   let status = "OK";
   let isIllegible = false;
+  let strDigitals = [];
 
   for (let i = 0; i < firstLine.length; i += DIGIT_WIDTH) {
     let digitalNumber =
       firstLine.slice(i, i + DIGIT_WIDTH) +
       secondLine.slice(i, i + DIGIT_WIDTH) +
       thirdLine.slice(i, i + DIGIT_WIDTH);
+
+    strDigitals.push(digitalNumber);
+
     if (digitalNumber in digitalNumbers) {
       accountNumber += digitalNumbers[digitalNumber];
     } else {
@@ -31,7 +35,7 @@ const getNumber = (firstLine, secondLine, thirdLine) => {
     return { account: accountNumber, status: status };
   }
 
-  return correctNumber(accountNumber);
+  return correctNumber(accountNumber, strDigitals);
 };
 
 const parseToAccountNumbers = (text) => {
