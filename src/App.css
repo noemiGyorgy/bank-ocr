@@ -87,12 +87,12 @@ input[type="file"] {
   font-weight: bold;
   display: inline-block;
   padding: 20px 60px;
-  cursor: pointer;
   margin-bottom: 30px;
 }
 
 .file-upload:hover {
   color: black;
+  cursor: pointer !important;
 }
 
 table {
@@ -133,4 +133,12 @@ tbody tr:nth-child(odd) {
 
 .blue {
   color: #41838c;
+}
+
+.back {
+  margin-top: 60px;
+  color: #41838c;
+}
+.back:hover {
+  color: #346870;
 }
