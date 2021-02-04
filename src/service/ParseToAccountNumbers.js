@@ -1,6 +1,6 @@
-import digitalNumbers from "./digitalNumbers";
-import isValidChecksum from "./isValidChecksum";
-import correctNumber from "./correctNumber";
+import digitalNumbers from "./DigitalNumbers";
+import isValidChecksum from "./IsValidChecksum";
+import correctNumber from "./CorrectNumber";
 
 const getNumber = (firstLine, secondLine, thirdLine) => {
   const DIGIT_WIDTH = 3;
